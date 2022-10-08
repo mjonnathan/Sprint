@@ -19,3 +19,4 @@ To run the app, you need to provide a Microsoft account for the app to send/rece
 
 ## Run application
 For run the app you need to use `flask run` on the project directory.
+# Sprint
