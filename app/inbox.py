@@ -19,7 +19,7 @@ def getDB():
 def show():
     db = get_db()
     messages = db.execute(
-        QUERY
+        "SELECT * FROM message "
     ).fetchall()
 
     return render_template('inbox/show.html', messages=messages)
@@ -61,12 +61,14 @@ def send():
         if error is not None:
             flash(error)
         else:
-            db = get_db
+            print('Enviar')
+            db = get_db()
             db.execute(
                 "INSERT INTO message (from_id, to_id, subject, body) values (?,?,?,?)",
                 (g.user['id'], userto['id'], subject, body)
             )
             db.commit()
+            
 
             return redirect(url_for('inbox.show'))
 

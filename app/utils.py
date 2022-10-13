@@ -13,6 +13,7 @@ U_CONFIRMED='CONFIRMED'
 
 def isEmailValid(email):  
     is_valid = validate_email(email)
+    print(is_valid)
     return is_valid
 
 
@@ -25,7 +26,9 @@ def isUsernameValid(user):
     
 def isPasswordValid(password):  
     if(re.search(pass_reguex, password)):  
+        print(password+"TRUE")
         return True
     else:  
+        print(password+"FALSE")
         return False 
       
